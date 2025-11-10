@@ -44,3 +44,13 @@ logs/
 .venv/
 .env
 .DS_Store
+# Ignore large binary artifacts and common temp files
+checkpoints/
+outputs/
+logs/
+*.pt
+*.pth
+.pytest_cache/
+.venv/
+.env
+.DS_Store
