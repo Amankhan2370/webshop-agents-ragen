@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Pytest cache
+.pytest_cache/
+
+# Spyder project files
+.spyproject/
+
+# macOS
+.DS_Store
+
+# Logs and outputs
+logs/
+outputs/
+
+# Model checkpoints and large binaries
+checkpoints/
+*.pt
+*.pth
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor directories
+.vscode/
+
+# temporary
+*.tmp
+# Ignore large binary artifacts and common temp files
+checkpoints/
+outputs/
+logs/
+*.pt
+*.pth
+.pytest_cache/
+.venv/
+.env
+.DS_Store

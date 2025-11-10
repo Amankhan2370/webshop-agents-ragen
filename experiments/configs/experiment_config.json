@@ -1,0 +1,104 @@
+{
+  "experiment_name": "RAGEN_WebShop_WebArena",
+  "description": "Full experiment suite for RAGEN on WebShop and WebArena",
+  
+  "webshop_epochs": 10,
+  "webarena_epochs": 15,
+  "batch_size": 8,
+  
+  "model_config": {
+    "hidden_dim": 256,
+    "num_layers": 3,
+    "dropout": 0.1,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0,
+    "use_memory": true,
+    "memory_size": 100,
+    "use_retrieval": true,
+    "retrieval_k": 5,
+    "use_astar": true,
+    "astar_beam_width": 10
+  },
+  
+  "training_config": {
+    "max_steps_per_episode": 50,
+    "gamma": 0.99,
+    "lambda": 0.95,
+    "clip_epsilon": 0.2,
+    "entropy_coef": 0.01,
+    "value_loss_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "num_workers": 4,
+    "eval_frequency": 100,
+    "save_frequency": 500,
+    "log_frequency": 10
+  },
+  
+  "webshop_config": {
+    "data_path": "data/webshop",
+    "max_products": 100,
+    "max_actions": 20,
+    "reward_threshold": 0.8,
+    "success_reward": 1.0,
+    "step_penalty": -0.01,
+    "invalid_action_penalty": -0.1
+  },
+  
+  "webarena_config": {
+    "data_path": "data/webarena",
+    "max_pages": 50,
+    "max_actions": 30,
+    "reward_threshold": 0.8,
+    "success_reward": 1.0,
+    "step_penalty": -0.01,
+    "invalid_action_penalty": -0.1,
+    "complexity_levels": ["easy", "medium", "hard"]
+  },
+  
+  "baselines": [
+    "vanilla_ppo",
+    "vanilla_a2c",
+    "dqn",
+    "reinforce"
+  ],
+  
+  "ablations": [
+    "no_retrieval",
+    "no_astar",
+    "no_memory",
+    "reduced_context",
+    "no_reward_shaping",
+    "fixed_exploration"
+  ],
+  
+  "evaluation_config": {
+    "num_eval_episodes": 100,
+    "eval_batch_size": 16,
+    "save_trajectories": true,
+    "compute_confidence": true,
+    "bootstrap_samples": 1000
+  },
+  
+  "hardware": {
+    "device": "cuda",
+    "mixed_precision": true,
+    "num_gpus": 1,
+    "cuda_deterministic": false
+  },
+  
+  "logging": {
+    "use_tensorboard": true,
+    "use_wandb": false,
+    "wandb_project": "ragen-experiments",
+    "log_level": "INFO",
+    "save_checkpoints": true,
+    "checkpoint_dir": "checkpoints"
+  },
+  
+  "seeds": {
+    "training_seed": 42,
+    "eval_seed": 123,
+    "data_seed": 456
+  }
+}

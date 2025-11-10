@@ -1,0 +1,179 @@
+# Configuration for WebShop and WebArena Training
+
+# WebShop Configuration
+webshop:
+  # Model architecture
+  model:
+    hidden_dim: 256
+    num_layers: 4
+    num_heads: 8
+    vocab_size: 50000
+    dropout: 0.1
+    mlp_ratio: 4.0
+  
+  # A*PO algorithm settings
+  beta: 0.3  # KL penalty coefficient
+  gamma: 0.95  # Discount factor
+  num_samples: 10  # Samples for V* estimation
+  learning_rate: 1e-4
+  
+  # Training settings
+  training:
+    num_episodes: 1000
+    batch_size: 32
+    eval_interval: 100  # Evaluate every N episodes
+    save_interval: 200  # Save checkpoint every N episodes
+    early_stopping_patience: 500
+    target_success_rate: 0.75  # Stop when reaching 75% success
+    max_grad_norm: 1.0
+    warmup_episodes: 50
+  
+  # Environment settings
+  environment:
+    max_steps: 10
+    num_products: 1000
+    reward_success: 1.0
+    reward_partial: 0.5
+    reward_step: -0.01
+  
+  # Other settings
+  seed: 42
+  device: cuda  # or cpu
+  use_wandb: false  # Enable Weights & Biases logging
+  wandb_project: "webshop-ragen"
+  wandb_entity: null
+
+# WebArena Configuration  
+webarena:
+  # Model architecture (larger for complex tasks)
+  model:
+    hidden_dim: 512
+    num_layers: 6
+    num_heads: 16
+    vocab_size: 100000
+    dropout: 0.1
+    mlp_ratio: 4.0
+    
+  # A*PO algorithm settings
+  beta: 0.5  # Higher KL penalty for complex tasks
+  gamma: 0.99  # Higher discount for longer episodes
+  num_samples: 20  # More samples for better V* estimation
+  learning_rate: 5e-5  # Lower learning rate for stability
+  
+  # Training settings
+  training:
+    num_episodes: 5000
+    batch_size: 16
+    eval_interval: 200
+    save_interval: 500
+    early_stopping_patience: 2000
+    target_success_rate: 0.60  # Lower target due to complexity
+    max_grad_norm: 0.5
+    warmup_episodes: 100
+    curriculum_learning: true  # Start with easier tasks
+    
+  # Environment settings
+  environment:
+    max_steps: 30
+    num_sites: 5
+    task_complexity_start: "easy"  # Start with easy tasks
+    task_complexity_schedule:
+      easy: 1000  # Episodes with easy tasks
+      medium: 2000  # Episodes with medium tasks
+      hard: 2000  # Episodes with hard tasks
+    
+  # Memory and planning
+  memory:
+    use_external_memory: true
+    memory_size: 100
+    memory_dim: 256
+    
+  planning:
+    use_mcts: false  # Use Monte Carlo Tree Search
+    mcts_simulations: 50
+    planning_depth: 5
+    
+  # Other settings
+  seed: 42
+  device: cuda
+  use_wandb: false
+  wandb_project: "webarena-ragen"
+  wandb_entity: null
+
+# Evaluation Configuration
+evaluation:
+  webshop:
+    num_episodes: 100
+    test_goals: 50  # Number of different shopping goals to test
+    metrics:
+      - success_rate
+      - average_reward
+      - average_steps
+      - efficiency
+    
+  webarena:
+    num_episodes: 100
+    test_all_complexities: true
+    task_ids: ["WA001", "WA002", "WA003", "WA004", "WA005"]
+    metrics:
+      - success_rate
+      - subtask_completion_rate
+      - average_steps
+      - efficiency
+      - failure_analysis
+    compare_with_baselines: true
+    baselines:
+      - random
+      - rule_based
+      - gpt4_cot  # If available
+
+# Baseline Configurations
+baselines:
+  random:
+    type: "random"
+    
+  rule_based:
+    type: "rule_based"
+    rules_file: "data/webshop/rules.json"
+    
+  gpt4_cot:
+    type: "llm"
+    model: "gpt-4"
+    use_chain_of_thought: true
+    api_key_env: "OPENAI_API_KEY"
+
+# Experiment Settings
+experiment:
+  name: "RAGEN_WebShop_WebArena"
+  description: "RAGEN with A*PO for web navigation tasks"
+  tags: ["ragen", "astarpo", "webshop", "webarena"]
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  save_trajectory_samples: true
+  num_trajectory_samples: 10
+  
+# Hardware Settings
+hardware:
+  num_workers: 4
+  pin_memory: true
+  mixed_precision: false  # Use mixed precision training
+  gradient_accumulation_steps: 1
+  
+# Ablation Study Settings (Optional)
+ablation:
+  run_ablation: false
+  ablations:
+    - name: "no_astarpo"
+      description: "Without A*PO value estimation"
+      disable_astarpo: true
+      
+    - name: "no_planning"
+      description: "Without RAGEN planning"
+      disable_planning: true
+      
+    - name: "small_model"
+      description: "Smaller model architecture"
+      model_scale: 0.5
+      
+    - name: "no_curriculum"
+      description: "Without curriculum learning"
+      disable_curriculum: true

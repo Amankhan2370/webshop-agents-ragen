@@ -1,0 +1,212 @@
+[
+  {
+    "id": "WA001",
+    "name": "Multi-Site Shopping Comparison",
+    "description": "Compare prices for a laptop across 3 different shopping sites and purchase from the cheapest one",
+    "sites_involved": ["shopping", "shopping", "shopping"],
+    "steps_required": 15,
+    "subtasks": [
+      "Search for laptop on site 1",
+      "Note price and specifications",
+      "Search for same laptop on site 2",
+      "Note price and specifications",
+      "Search for laptop on site 3",
+      "Compare all prices",
+      "Navigate to cheapest option",
+      "Add to cart",
+      "Complete purchase"
+    ],
+    "success_criteria": {
+      "purchased": true,
+      "best_price": true,
+      "correct_product": true
+    },
+    "complexity": "medium",
+    "timeout": 30
+  },
+  {
+    "id": "WA002",
+    "name": "Travel Planning with Calendar",
+    "description": "Book a flight and hotel for a business trip while checking calendar for availability",
+    "sites_involved": ["productivity", "travel", "travel", "email"],
+    "steps_required": 20,
+    "subtasks": [
+      "Check calendar for available dates",
+      "Search for flights on travel site",
+      "Compare flight options",
+      "Select best flight",
+      "Search for hotels near destination",
+      "Check hotel reviews",
+      "Book hotel room",
+      "Book flight",
+      "Add trip to calendar",
+      "Send confirmation email"
+    ],
+    "success_criteria": {
+      "flight_booked": true,
+      "hotel_booked": true,
+      "calendar_updated": true,
+      "email_sent": true
+    },
+    "complexity": "hard",
+    "timeout": 30
+  },
+  {
+    "id": "WA003",
+    "name": "Social Media Research Report",
+    "description": "Research trending topics on social media and create a summary report",
+    "sites_involved": ["social", "news", "productivity"],
+    "steps_required": 12,
+    "subtasks": [
+      "Check trending topics on social media",
+      "Identify top 3 trends",
+      "Search news for each trend",
+      "Gather key information",
+      "Open document editor",
+      "Create report structure",
+      "Write trend summaries",
+      "Add sources and citations",
+      "Format document",
+      "Save report"
+    ],
+    "success_criteria": {
+      "report_created": true,
+      "trends_identified": 3,
+      "sources_cited": true
+    },
+    "complexity": "medium",
+    "timeout": 25
+  },
+  {
+    "id": "WA004",
+    "name": "Banking and Payment Update",
+    "description": "Update payment methods across multiple services using new bank card",
+    "sites_involved": ["banking", "shopping", "productivity", "shopping"],
+    "steps_required": 18,
+    "subtasks": [
+      "Login to banking site",
+      "Get new card details",
+      "Navigate to first shopping site",
+      "Update payment method",
+      "Verify update successful",
+      "Navigate to second shopping site",
+      "Update payment method",
+      "Navigate to subscription service",
+      "Update payment details",
+      "Verify all updates",
+      "Check transaction history"
+    ],
+    "success_criteria": {
+      "card_details_retrieved": true,
+      "all_sites_updated": true,
+      "verification_complete": true
+    },
+    "complexity": "hard",
+    "timeout": 30
+  },
+  {
+    "id": "WA005",
+    "name": "Email Campaign Creation",
+    "description": "Create and schedule an email marketing campaign",
+    "sites_involved": ["email", "productivity"],
+    "steps_required": 10,
+    "subtasks": [
+      "Open email platform",
+      "Create new campaign",
+      "Design email template",
+      "Import contact list",
+      "Personalize content",
+      "Set campaign parameters",
+      "Preview email",
+      "Schedule sending time",
+      "Confirm campaign setup",
+      "Monitor initial sends"
+    ],
+    "success_criteria": {
+      "campaign_created": true,
+      "template_designed": true,
+      "scheduled": true
+    },
+    "complexity": "easy",
+    "timeout": 20
+  },
+  {
+    "id": "WA006",
+    "name": "Product Research and Purchase",
+    "description": "Research product reviews across multiple sites before making a purchase decision",
+    "sites_involved": ["shopping", "news", "social", "shopping"],
+    "steps_required": 14,
+    "subtasks": [
+      "Search for product",
+      "Check specifications",
+      "Navigate to review site",
+      "Read professional reviews",
+      "Check user reviews on social",
+      "Compare with alternatives",
+      "Check price history",
+      "Find best deal",
+      "Apply discount code",
+      "Complete purchase"
+    ],
+    "success_criteria": {
+      "reviews_checked": true,
+      "price_compared": true,
+      "purchase_complete": true
+    },
+    "complexity": "medium",
+    "timeout": 25
+  },
+  {
+    "id": "WA007",
+    "name": "Document Collaboration Setup",
+    "description": "Create shared document and set up collaboration with team members",
+    "sites_involved": ["productivity", "email"],
+    "steps_required": 8,
+    "subtasks": [
+      "Create new document",
+      "Add initial content",
+      "Set sharing permissions",
+      "Invite collaborators via email",
+      "Configure editing rights",
+      "Set up version control",
+      "Create comment thread",
+      "Send notification"
+    ],
+    "success_criteria": {
+      "document_created": true,
+      "collaborators_added": true,
+      "permissions_set": true
+    },
+    "complexity": "easy",
+    "timeout": 15
+  },
+  {
+    "id": "WA008",
+    "name": "News Aggregation and Summary",
+    "description": "Collect news from multiple sources on a specific topic and create summary",
+    "sites_involved": ["news", "news", "news", "productivity"],
+    "steps_required": 16,
+    "subtasks": [
+      "Search topic on news site 1",
+      "Extract key points",
+      "Search topic on news site 2",
+      "Extract key points",
+      "Search topic on news site 3",
+      "Compare information",
+      "Identify common themes",
+      "Open document editor",
+      "Write summary introduction",
+      "Add main findings",
+      "Include contradictions",
+      "Add source links",
+      "Format document"
+    ],
+    "success_criteria": {
+      "sources_consulted": 3,
+      "summary_created": true,
+      "sources_cited": true
+    },
+    "complexity": "medium",
+    "timeout": 25
+  }
+]

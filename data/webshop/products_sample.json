@@ -1,0 +1,102 @@
+[
+  {
+    "id": "B001",
+    "title": "Wireless Bluetooth Headphones Pro",
+    "price": 79.99,
+    "features": ["noise cancelling", "wireless", "30 hour battery", "comfortable"],
+    "rating": 4.5,
+    "category": "electronics",
+    "description": "Premium wireless headphones with active noise cancellation and exceptional battery life",
+    "available": true
+  },
+  {
+    "id": "B002",
+    "title": "Stainless Steel Water Bottle 32oz",
+    "price": 24.99,
+    "features": ["insulated", "BPA free", "leak proof", "dishwasher safe"],
+    "rating": 4.8,
+    "category": "home",
+    "description": "Double-wall vacuum insulated water bottle keeps drinks cold for 24 hours",
+    "available": true
+  },
+  {
+    "id": "B003",
+    "title": "Organic Green Tea Collection",
+    "price": 15.99,
+    "features": ["organic", "100 bags", "antioxidant rich", "caffeine free option"],
+    "rating": 4.3,
+    "category": "grocery",
+    "description": "Premium organic green tea collection with multiple flavors",
+    "available": true
+  },
+  {
+    "id": "B004",
+    "title": "Ergonomic Laptop Stand",
+    "price": 34.99,
+    "features": ["adjustable height", "aluminum", "portable", "heat dissipation"],
+    "rating": 4.6,
+    "category": "office",
+    "description": "Adjustable aluminum laptop stand for better posture and cooling",
+    "available": true
+  },
+  {
+    "id": "B005",
+    "title": "Premium Yoga Mat 6mm",
+    "price": 29.99,
+    "features": ["non-slip", "eco-friendly", "extra thick", "carrying strap"],
+    "rating": 4.7,
+    "category": "sports",
+    "description": "Extra thick yoga mat with superior grip and cushioning",
+    "available": true
+  },
+  {
+    "id": "B006",
+    "title": "Smart Watch Fitness Tracker",
+    "price": 149.99,
+    "features": ["heart rate monitor", "GPS", "waterproof", "7 day battery"],
+    "rating": 4.4,
+    "category": "electronics",
+    "description": "Advanced fitness tracker with comprehensive health monitoring",
+    "available": true
+  },
+  {
+    "id": "B007",
+    "title": "Coffee Maker Programmable",
+    "price": 59.99,
+    "features": ["12 cup", "programmable", "auto shutoff", "glass carafe"],
+    "rating": 4.2,
+    "category": "home",
+    "description": "Programmable coffee maker with thermal carafe and auto-brew",
+    "available": true
+  },
+  {
+    "id": "B008",
+    "title": "Running Shoes Ultralight",
+    "price": 89.99,
+    "features": ["breathable mesh", "cushioned sole", "lightweight", "arch support"],
+    "rating": 4.5,
+    "category": "sports",
+    "description": "Professional running shoes with advanced cushioning technology",
+    "available": true
+  },
+  {
+    "id": "B009",
+    "title": "Bestselling Mystery Novel",
+    "price": 14.99,
+    "features": ["bestseller", "hardcover", "award winning", "page turner"],
+    "rating": 4.8,
+    "category": "books",
+    "description": "Gripping mystery novel from award-winning author",
+    "available": true
+  },
+  {
+    "id": "B010",
+    "title": "Wireless Charging Pad",
+    "price": 25.99,
+    "features": ["fast charging", "universal compatibility", "LED indicator", "slim design"],
+    "rating": 4.3,
+    "category": "electronics",
+    "description": "Fast wireless charging pad compatible with all Qi-enabled devices",
+    "available": true
+  }
+]
